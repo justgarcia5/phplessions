@@ -57,8 +57,17 @@
   echo "<br />";
   echo "$fruits[2]<br />";
 
-  echo "My favorite fruit is a " . $fruits[1] . "!<hr />";
+  for ($x = 0; $x < count($fruits); $x++) {
+    if ($fruits[$x][0] === "a" or $fruits[$x][0] === "o") {
+      echo "My favorite fruit is an " . $fruits[$x] . "!<hr />";
+    } else {
+      echo "My favorite fruit is a " . $fruits[$x] . "!<hr />";
+    }
+  }
 
+
+
+  // obects
   class Person {
     public $firstname;
     public $lastname;
@@ -81,6 +90,73 @@
   echo $person1->hello();
   echo "<br />";
   echo $person2->hello();
+  echo "<hr />";
+
+
+
+  echo str_word_count("Hello world");
+  echo "<br />";
+  echo strrev("Hello World");
+  echo "<br />";
+  echo strpos("Hello world", "r");
+  echo "<br />";
+  echo str_replace();
+  echo "<hr />";
+
+  define("WELCOME", "Hello! My name is John Smith.");
+  echo WELCOME;
+  echo "<br />";
+
+  define("WELCOME2", "Hello! My name is John Smith.", true);
+  echo welcome2;
+  echo "<br />";
+
+  define("CAR", "VOVLO");
+
+  function mycar() {
+    echo CAR;
+  }
+
+  mycar();
+
+  echo "<hr />";
+
+  $arr1 = array(0 => "red", 1 => "orange");
+  $arr2 = array(2 => "yellow", 3 => "green");
+  print_r($arr1 + $arr2);
+  $arr3 = $arr1 + $arr2;
+  echo "<br />";
+  echo $arr3[3];
+  echo "<hr />";
+
+  for ($x = 0; $x < 10; $x++) {
+    echo "$x<br />";
+  }
+
+  echo "<hr />";
+
+
+  $car = array("Honda", "Toyota", "Ford");
+  foreach ($car as $value) {
+    echo "$value<br />";
+  }
+  echo "<br />";
+
+  echo count($car);
+  echo sort($car);
+  echo "<br />";
+
+  for ($x = 0; $x < count($car); $x++) {
+    echo $car[$x] . ",<br /> ";
+  }
+  echo "<hr />";
+
+  echo $_SERVER["PHP_SELF"];
+  echo "<br />";
+  echo $_SERVER["SERVER_NAME"];
+  echo "<br />";
+  echo $_SERVER["GET"];
+  echo "<br />";
 
   ?>
 
